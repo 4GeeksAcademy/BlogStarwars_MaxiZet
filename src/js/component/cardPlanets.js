@@ -1,25 +1,24 @@
 import React, { useContext } from "react";
 import "../../styles/index.css";
-import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Context } from "../store/appContext"
 
 
-const Card = (props) => {
+const CardPlanets = (props) => {
 
-    // const { store } = useContext(Context)
+    const { store } = useContext(Context)
 
     return (
 
 
         <div className="card mx-1">
-            <img src={"https://starwars-visualguide.com/assets/img/characters/" + props.uid + ".jpg"} className="card-img-top" alt={props.name} />
+            <img src={"https://starwars-visualguide.com/assets/img/planets/" + props.uid + ".jpg"} className="card-img-top" alt={props.name} />
             <div className="card-body">
                 <h5 className="card-title">{props.name}</h5>
                 <p></p>
                 <p></p>
                 <p></p>
                 <div className="d-flex justify-content-evenly">
-                    <Link to={"/single/" + props.uid} className="btn btn-outline-primary">Learn more!</Link>
+                    <button className="btn btn-outline-primary">Learn more!</button>
                     <button className="btn btn-outline-warning"><i className="fa-regular fa-heart"></i></button>
                 </div>
             </div>
@@ -29,4 +28,4 @@ const Card = (props) => {
     )
 };
 
-export default Card;
+export default CardPlanets;
