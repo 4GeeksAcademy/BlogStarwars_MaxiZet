@@ -3,13 +3,46 @@
 */
 body {
   background-color: black;
+  background-image: url("https://lumiere-a.akamaihd.net/v1/images/star-wars-backgrounds-14_856985d9.jpeg?download=true");
 }
 
 .card {
   min-width: 300px;
+  max-width: 700px;
 }
 
 .my-carrusel {
   display: flex;
   overflow: scroll;
+  overflow-x: auto; /* Mantiene el scroll horizontal */
+  overflow-y: hidden; /* Oculta el scroll vertical */
+}
+/* Scroll personalizado para my-carrusel */
+.my-carrusel::-webkit-scrollbar {
+  height: 8px; /* Altura del scrollbar horizontal */
+  background-color: #1a1a1a; /* Fondo oscuro acorde al tema */
+}
+
+.my-carrusel::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    90deg,
+    #ffd700,
+    #ff6600
+  ); /* Efecto dorado degradado */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.75); /* Brillo sutil */
+}
+
+.my-carrusel::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    90deg,
+    #ffcc00,
+    #ff3300
+  ); /* Más intensidad al hover */
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.9); /* Resplandor */
+}
+
+.my-carrusel::-webkit-scrollbar-track {
+  background: #0f0f0f; /* Fondo más oscuro para el track */
+  border-radius: 10px; /* Bordes redondeados */
 }

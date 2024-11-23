@@ -3,14 +3,17 @@ import { Link } from "react-router-dom";
 
 export const Navbar = () => {
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-dark bg-dark mb-3">
 			<div className="container">
 				<Link to="/">
-					<span className="navbar-brand mb-0 h1">Star Wars</span>
+					<img
+						src="https://lumiere-a.akamaihd.net/v1/images/sw_logo_stacked_2x-52b4f6d33087_7ef430af.png"
+						style={{ maxWidth: "100px" }}
+					/>
 				</Link>
 				<div className="ml-auto">
 					<div className="dropdown">
-						<a className="btn btn-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<a className="btn btn-warning dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 							Favorites 0
 						</a>
 
