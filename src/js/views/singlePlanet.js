@@ -9,31 +9,32 @@ export const SinglePlanet = props => {
 
 
     useEffect(() => {
-        actions.getInfoCharacters(theid)
+        actions.getInfoPlanets(theid)
     }, [])
-    const planets = store.infoPlanets;
+
+    const planets = store.infoPlanet;
 
     return (
         <div className="text-center">
-            <div className="card mb-3 ms-5 justify-content-center bg-dark bg-gradient" style={{ "max-width": "1000px" }}>
+            <div className="card mb-3 ms-5 justify-content-center bg-dark bg-gradient" style={{ width: "auto" }}>
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src={`https://starwars-visualguide.com/assets/img/planets/${theid}.jpg`} className="card-img-top" alt={planets?.properties?.name} />
+                        <img src={`https://starwars-visualguide.com/assets/img/planets/${theid}.jpg`} className="card-img-top" alt={planets?.properties?.name} style={{ "objectFit": "cover", "height": "100%" }} />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
                             <h3 className="card-title mb-5 text-center text-light fw-bold">{planets?.properties?.name}</h3>
-                            <p className="card-text  shadow p-3 mb-3  rounded text-info text-opacity-80 bg-dark bg-gradient">Gender: {planets?.properties?.gender}</p>
-                            <p className="card-text  shadow p-3 mb-3  rounded text-info text-opacity-80 bg-dark bg-gradient">Eyes Colors: {planets?.properties?.eye_color}</p>
-                            <p className="card-text  shadow p-3 mb-3  rounded text-info text-opacity-80 bg-dark bg-gradient">Hair Color: {planets?.properties?.hair_color}</p>
-                            <p className="card-text  shadow p-3 mb-3  rounded text-info text-opacity-80 bg-dark bg-gradient">Height: {planets?.properties?.height}</p>
+                            <p className="card-text  shadow p-3 mb-3  rounded text-info text-opacity-80 bg-dark bg-gradient">Climate: {planets?.properties?.climate}</p>
+                            <p className="card-text  shadow p-3 mb-3  rounded text-info text-opacity-80 bg-dark bg-gradient">Created: {planets?.properties?.created}</p>
+                            <p className="card-text  shadow p-3 mb-3  rounded text-info text-opacity-80 bg-dark bg-gradient">Diameter: {planets?.properties?.diameter}</p>
+                            <p className="card-text  shadow p-3 mb-3  rounded text-info text-opacity-80 bg-dark bg-gradient">Gravity: {planets?.properties?.gravity}</p>
                             <div className="d-flex justify-content-evenly">
                                 <Link to="/">
                                     <span className="btn btn-outline-danger btn-lg" href="#" role="button">
                                         Back home
                                     </span>
                                 </Link>
-                                <button className="btn btn-outline-warning"><i className="fa-regular fa-heart"></i></button>
+
                             </div>
                         </div>
                     </div>

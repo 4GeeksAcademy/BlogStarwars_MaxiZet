@@ -8,6 +8,7 @@ export const Single = props => {
 	const { theid } = useParams();
 
 
+
 	useEffect(() => {
 		actions.getInfoCharacters(theid)
 	}, [])
@@ -15,7 +16,7 @@ export const Single = props => {
 
 	return (
 		<div className="text-center">
-			<div className="card mb-3 ms-5 justify-content-center bg-dark bg-gradient" style={{ "max-width": "1000px" }}>
+			<div className="card mb-3 ms-5 justify-content-center bg-dark bg-gradient" style={{ maxWidth: "1000px" }}>
 				<div className="row g-0">
 					<div className="col-md-4">
 						<img src={`https://starwars-visualguide.com/assets/img/characters/${theid}.jpg`} className="card-img-top" alt={characters?.properties?.name} />
@@ -33,7 +34,6 @@ export const Single = props => {
 										Back home
 									</span>
 								</Link>
-								<button className="btn btn-outline-warning"><i className="fa-regular fa-heart"></i></button>
 							</div>
 						</div>
 					</div>

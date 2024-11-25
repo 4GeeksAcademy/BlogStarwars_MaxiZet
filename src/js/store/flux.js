@@ -6,6 +6,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			vehicles: [],
 			infoCharacters: [],
+			infoPlanet: [],
+			infoVehicle: [],
+			favoritos: [],
 		},
 		actions: {
 			getCharacters: async () => {
@@ -93,7 +96,58 @@ const getState = ({ getStore, getActions, setStore }) => {
 				}
 
 			},
-		}
+			getInfoPlanets: async (id) => {
+				// console.log(id)
+				try {
+					const resp = await fetch(`${getStore().urlBase}/planets/${id}`, {
+						method: "GET",
+						headers: { "Content-Type": "application/json" }
+					})
+
+					if (resp.status == 200) {
+						const data = await resp.json()
+						console.log(data.result)
+						setStore({ infoPlanet: data.result })
+						return true
+					}
+				} catch (error) {
+					console.log(error)
+					return false
+				}
+
+			},
+			getInfoVehicle: async (id) => {
+				// console.log(id)
+				try {
+					const resp = await fetch(`${getStore().urlBase}/vehicles/${id}`, {
+						method: "GET",
+						headers: { "Content-Type": "application/json" }
+					})
+
+					if (resp.status == 200) {
+						const data = await resp.json()
+						console.log(data.result)
+						setStore({ infoVehicle: data.result })
+						return true
+					}
+				} catch (error) {
+					console.log(error)
+					return false
+				}
+
+			},
+			addfavoritos: (item) => {
+				if (getStore().favoritos.includes(item)) {
+					let aux = []
+					aux = getStore().favoritos.filter((elem) => elem != item)
+					setStore({ favoritos: aux })
+				} else {
+					setStore({ favoritos: [...getStore().favoritos, item] })
+				}
+
+			},
+
+		},
 	};
 };
 

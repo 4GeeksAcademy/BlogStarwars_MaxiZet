@@ -18,7 +18,7 @@ export const Home = () => {
 				<div className="my-carrusel">
 					{store.characters.map((item, index) => {
 						return (
-							<Card key={index} name={item.properties.name} Gender={item.properties.gender} uid={item.uid} />
+							<Card key={index} name={item.properties.name} Gender={item.properties.gender} uid={item.uid} description={item.description} />
 						)
 					})
 					}
@@ -29,7 +29,7 @@ export const Home = () => {
 				<div className="my-carrusel">
 					{store.planets.map((item, index) => {
 						return (
-							<CardPlanets key={index} name={item.properties.name} uid={item.uid} />
+							<CardPlanets key={index} name={item.properties.name} uid={item.uid} description={item.description} />
 						)
 					})
 					}
@@ -40,7 +40,7 @@ export const Home = () => {
 				<div className="my-carrusel">
 					{store.vehicles.map((item, index) => {
 						return (
-							<CardVehicles key={index} name={item.properties.name} uid={item.uid} />
+							<CardVehicles key={index} name={item.properties.name} uid={item.uid} description={item.description} />
 						)
 					})
 					}
